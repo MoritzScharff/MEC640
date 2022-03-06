@@ -17,16 +17,17 @@ Therefore, the chosen papers are reviewed and discussed in detail, any possibly 
 
 Schedule
 --------
-The following literature is reviewed and discussed in the present course.
 
-.. list-table:: Overview and literature
-   :widths: 20 25 500
+The class is scheduled from 10:00 am to 01:00 pm GMT-5 (peruvian time).
+
+.. list-table:: Overview
+   :widths: 20 400
    :header-rows: 1
 
    * - Session
      - Date - Topic
    * - 1
-     - 11.09.2022 – Introduction to Python, GitHub and PyCharm
+     - 21.03.2022 – Introduction to Python, GitHub and PyCharm
    * - 2
      - 18.09.2022 – Python basics
    * - 3
