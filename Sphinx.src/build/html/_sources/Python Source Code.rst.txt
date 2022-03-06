@@ -1,0 +1,54 @@
+Python Source Code
+==================
+
+Introduction:
+-------------
+!.. automodule:: demonstration
+!   :members:
+
+.. raw:: html
+   :file: Template.html
+
+Overview and biomimetic in soft robotics:
+-----------------------------------------
+
+Theoretical model in a jupyter notebook
+***************************************
+
+.. raw:: html
+ :file: Steigenberger [2012].html
+
+Numeric evaluation in Python
+****************************
+
+!.. automodule:: custom_lib
+!  :members:
+
+
+Tensegrity:
+-----------
+
+Smart materials I:
+------------------
+.. raw:: html
+ :file: Volkova [2017].html
+
+
+
+Soft gripping I:
+----------------
+
+Soft gripping II:
+-----------------
+
+Smart materials II:
+-------------------
+
+.. raw:: html
+ :file: Henke [2012].html
+
+Control strategies I:
+---------------------
+
+Control strategies II:
+----------------------
