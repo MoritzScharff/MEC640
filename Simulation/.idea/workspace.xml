@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="429ce336-542f-49d5-8390-f5b481eea079" name="Changes" comment="" />
+    <list default="true" id="de75e13c-efab-4aca-bc46-74dda148d888" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="261Zw76fAqoiOrPwQSpg6ZjnXIT" />
+  <component name="ProjectId" id="26LZ01m0PWDeofs5yakW8cPFleB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,16 +19,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="429ce336-542f-49d5-8390-f5b481eea079" name="Changes" comment="" />
-      <created>1646593287960</created>
+      <changelist id="de75e13c-efab-4aca-bc46-74dda148d888" name="Changes" comment="" />
+      <created>1647204600130</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1646593287960</updated>
+      <updated>1647204600130</updated>
     </task>
     <servers />
   </component>

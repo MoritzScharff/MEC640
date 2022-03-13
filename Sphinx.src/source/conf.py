@@ -12,16 +12,13 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
-#sys.path.insert(0, os.path.abspath('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/00_Introduction'))
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/01_Biomimetic')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/02_Tensegrity')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/03_Smart_materials_I')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/04_Soft_gripping_I')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/05_Soft_gripping_II')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/06_Smart_materials_II')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/07_Control_strategies_I')
-#sys.path.append('C:/Users/morit/Nextcloud/Documents/PostDoc/03_Training/Trainer/2021_Soft Robotics/Documents/Simulation/08_Control_strategies_II')
+# sys.path.insert(0, os.path.abspath('.'))
+# for x in os.walk('../../Simulation/'):
+#    sys.path.insert(0, x[0])
+
+sys.path.insert(0, os.path.abspath('../../Simulation'))
+#sys.path.append('E1')
+
 
 # -- Project information -----------------------------------------------------
 
