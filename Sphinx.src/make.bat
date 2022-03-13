@@ -34,4 +34,4 @@ goto end
 :end
 popd
 
-xcopy /s build\html\  ..\docs
+xcopy /s/Y build\html\  ..\docs
