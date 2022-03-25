@@ -1,0 +1,20 @@
+Basic syntax and commands
+-------------------------
+- varibalen defnieren
+native data types vs np data tyes vs sym data types
+- vector syntax, matrix
+- for schleifen
+- functionen lambda, equation, zuweisung, function def
+- solve lin sys symbolic
+- solve lin sys numeric
+- sovlve ode
+- solve ode sys
+- solve pde?
+- ploten
+- integrieren differenzieren
+- vektor operationen
+- display Math
+- subs
+- debugging in python und ws
+- jupyter notebook vs IDE / pycharm Integrated Development Environment
+

@@ -1,0 +1,11 @@
+Computational biology: solving of ODEs IV
+-----------------------------------------
+
+.. image:: _static/E8.png
+    :width: 400
+    :alt: Bar with joint and different loads.
+
+- given:
+    - :math:`F, a, q_0, \alpha`
+- wanted:
+    - ...

@@ -1,0 +1,11 @@
+Statics: solving of non-linear systems of ODEs and dimensional analysis
+-----------------------------------------------------------------------
+
+.. image:: _static/E14.png
+    :width: 400
+    :alt: Bar with joint and different loads.
+
+- given:
+    - :math:`F, a, q_0, \alpha`
+- wanted:
+    - ...

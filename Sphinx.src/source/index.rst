@@ -6,8 +6,9 @@
 Welcome to MEC640's documentation!
 ================================================
 
-The Soft Robotics course tries to introduce the students to the world of Soft Robotics by discussing chosen cases from literature to show the variety of this field of research.
-Therefore, the chosen papers are reviewed and discussed in detail, any possibly created source code will be documented on this website for later review, reuse etc. The source files are available at `GitHub <https://github.com/MoritzScharff/Soft-Robotics-Course>`_ .
+The course: **Temas de Diseño en Ingeniería Mecánica D - Aplicación de métodos matemáticos para ingeniería implementado por Python** should facilitate the students to solve tasks in scientific computing beyond extensive Software frameworks like `ANSYS <https://www.ansys.com/de-de>`_ .
+
+Therefore, the are going to solve several exercise of well known problems by implementing them in Python, any created source code will be documented on this website for later review, reuse etc. The source files are available at `GitHub <https://github.com/MoritzScharff/MEC640>`_ too.
 
 Schedule
 --------
@@ -53,7 +54,6 @@ The class is scheduled from 10:00 am to 01:00 pm GMT-5 (peruvian time).
    :maxdepth: 1
    :caption: Contents:
 
-   Python Source Code
    exercises
 
 Literature

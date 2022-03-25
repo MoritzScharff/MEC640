@@ -1,0 +1,11 @@
+Fluid dynamics: solving of ODEs III
+-----------------------------------
+
+.. image:: _static/E7.png
+    :width: 400
+    :alt: Bar with joint and different loads.
+
+- given:
+    - :math:`F, a, q_0, \alpha`
+- wanted:
+    - ...

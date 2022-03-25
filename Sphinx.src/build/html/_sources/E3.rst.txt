@@ -1,0 +1,21 @@
+Statics: solving of systems of linear equations
+------------------------------------------------
+
+.. image:: _static/E1.png
+    :width: 400
+    :alt: Bar with joint and different loads.
+
+- given:
+    - :math:`F, a, q_0, \alpha`
+- wanted:
+    - static external and internal force equilibria, support reactions,
+    - plot of the components internal force equilibirum
+
+.. image:: _static/E2.png
+    :width: 400
+    :alt: Bar with joint and different loads.
+
+- given:
+    - :math:`F, a, q_0, \alpha`
+- wanted:
+    - ...

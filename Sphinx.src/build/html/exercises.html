@@ -7,6 +7,7 @@
   <title>Exercises &mdash; MEC 640 0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -15,11 +16,13 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Python Source Code" href="Python%20Source%20Code.html" /> 
+    <link rel="next" title="Get ready for the course" href="E1.html" />
+    <link rel="prev" title="Welcome to MEC640’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,20 +42,21 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Python%20Source%20Code.html">Python Source Code</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Exercises</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#statics-solving-of-systems-of-linear-equations">Statics: solving of systems of linear equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statics-solving-of-odes-i">Statics: solving of ODEs I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statics-solving-of-odes-ii">Statics: solving of ODEs II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statics-solving-of-eigenvalue-problems">Statics: solving of eigenvalue problems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fluid-dynamics-solving-of-odes-iii">Fluid dynamics: solving of ODEs III</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#computational-biology-solving-of-odes-iv">Computational biology: solving of ODEs IV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dynamics-solving-of-systems-of-odes-i">Dynamics: solving of systems of ODEs I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mechatronics-solving-of-systems-of-odes-ii">Mechatronics: solving of systems of ODEs II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dynamics-solving-of-pdes-i">Dynamics: solving of PDEs I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dynamics-solving-of-pdes-ii">Dynamics: solving of PDEs II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statics-solving-of-non-linear-systems-of-odes-and-dimensional-analysis">Statics: solving of non-linear systems of ODEs and dimensional analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mechatronics-solving-of-a-optimization-problem">Mechatronics: solving of a optimization problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E1.html">Get ready for the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E2.html">Basic syntax and commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E3.html">Statics: solving of systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E4.html">Statics: solving of ODEs I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E5.html">Statics: solving of ODEs II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E6.html">Statics: solving of eigenvalue problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E7.html">Fluid dynamics: solving of ODEs III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E8.html">Computational biology: solving of ODEs IV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E9.html">Dynamics: solving of systems of ODEs I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E10.html">Mechatronics: solving of systems of ODEs II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E11.html">Dynamics: solving of PDEs I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E12.html">Dynamics: solving of PDEs II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E13.html">Statics: solving of non-linear systems of ODEs and dimensional analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E14.html">Mechatronics: solving of a optimization problem</a></li>
 </ul>
 </li>
 </ul>
@@ -83,306 +87,33 @@
              
   <section id="exercises">
 <h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline"></a></h1>
-<section id="statics-solving-of-systems-of-linear-equations">
-<h2>Statics: solving of systems of linear equations<a class="headerlink" href="#statics-solving-of-systems-of-linear-equations" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E1.png"><img alt="Bar with joint and different loads." src="_images/E1.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="E1.html">Get ready for the course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E2.html">Basic syntax and commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E3.html">Statics: solving of systems of linear equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E4.html">Statics: solving of ODEs I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E5.html">Statics: solving of ODEs II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E6.html">Statics: solving of eigenvalue problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E7.html">Fluid dynamics: solving of ODEs III</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E8.html">Computational biology: solving of ODEs IV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E9.html">Dynamics: solving of systems of ODEs I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E10.html">Mechatronics: solving of systems of ODEs II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E11.html">Dynamics: solving of PDEs I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E12.html">Dynamics: solving of PDEs II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E13.html">Statics: solving of non-linear systems of ODEs and dimensional analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E14.html">Mechatronics: solving of a optimization problem</a></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>static external and internal force equilibria, support reactions,</p></li>
-<li><p>plot of the components internal force equilibirum</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<a class="reference internal image-reference" href="_images/E2.png"><img alt="Bar with joint and different loads." src="_images/E2.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="statics-solving-of-odes-i">
-<h2>Statics: solving of ODEs I<a class="headerlink" href="#statics-solving-of-odes-i" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E3.png"><img alt="Bar with joint and different loads." src="_images/E3.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<a class="reference internal image-reference" href="_images/E4.png"><img alt="Bar with joint and different loads." src="_images/E4.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="statics-solving-of-odes-ii">
-<h2>Statics: solving of ODEs II<a class="headerlink" href="#statics-solving-of-odes-ii" title="Permalink to this headline"></a></h2>
-<p>missing, hier kommt irgendwas mit Temperatur Dehnung</p>
-</section>
-<section id="statics-solving-of-eigenvalue-problems">
-<h2>Statics: solving of eigenvalue problems<a class="headerlink" href="#statics-solving-of-eigenvalue-problems" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E5.png"><img alt="Bar with joint and different loads." src="_images/E5.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<a class="reference internal image-reference" href="_images/E6.png"><img alt="Bar with joint and different loads." src="_images/E6.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="fluid-dynamics-solving-of-odes-iii">
-<h2>Fluid dynamics: solving of ODEs III<a class="headerlink" href="#fluid-dynamics-solving-of-odes-iii" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E7.png"><img alt="Bar with joint and different loads." src="_images/E7.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="computational-biology-solving-of-odes-iv">
-<h2>Computational biology: solving of ODEs IV<a class="headerlink" href="#computational-biology-solving-of-odes-iv" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E8.png"><img alt="Bar with joint and different loads." src="_images/E8.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="dynamics-solving-of-systems-of-odes-i">
-<h2>Dynamics: solving of systems of ODEs I<a class="headerlink" href="#dynamics-solving-of-systems-of-odes-i" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E9.png"><img alt="Bar with joint and different loads." src="_images/E9.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="mechatronics-solving-of-systems-of-odes-ii">
-<h2>Mechatronics: solving of systems of ODEs II<a class="headerlink" href="#mechatronics-solving-of-systems-of-odes-ii" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E10.png"><img alt="Bar with joint and different loads." src="_images/E10.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="dynamics-solving-of-pdes-i">
-<h2>Dynamics: solving of PDEs I<a class="headerlink" href="#dynamics-solving-of-pdes-i" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E11.png"><img alt="Bar with joint and different loads." src="_images/E11.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="dynamics-solving-of-pdes-ii">
-<h2>Dynamics: solving of PDEs II<a class="headerlink" href="#dynamics-solving-of-pdes-ii" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E12.png"><img alt="Bar with joint and different loads." src="_images/E12.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<a class="reference internal image-reference" href="_images/E13.png"><img alt="Bar with joint and different loads." src="_images/E13.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="statics-solving-of-non-linear-systems-of-odes-and-dimensional-analysis">
-<h2>Statics: solving of non-linear systems of ODEs and dimensional analysis<a class="headerlink" href="#statics-solving-of-non-linear-systems-of-odes-and-dimensional-analysis" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E14.png"><img alt="Bar with joint and different loads." src="_images/E14.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
-<section id="mechatronics-solving-of-a-optimization-problem">
-<h2>Mechatronics: solving of a optimization problem<a class="headerlink" href="#mechatronics-solving-of-a-optimization-problem" title="Permalink to this headline"></a></h2>
-<a class="reference internal image-reference" href="_images/E15.png"><img alt="Bar with joint and different loads." src="_images/E15.png" style="width: 400px;" /></a>
-<ul class="simple">
-<li><dl class="simple">
-<dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</section>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Python%20Source%20Code.html" class="btn btn-neutral float-left" title="Python Source Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to MEC640’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="E1.html" class="btn btn-neutral float-right" title="Get ready for the course" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

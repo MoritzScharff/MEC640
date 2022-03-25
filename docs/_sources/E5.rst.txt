@@ -1,0 +1,4 @@
+Statics: solving of ODEs II
+---------------------------
+
+missing, hier kommt irgendwas mit Temperatur Dehnung

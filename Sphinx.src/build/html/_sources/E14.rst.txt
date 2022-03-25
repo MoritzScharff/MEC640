@@ -1,0 +1,11 @@
+Mechatronics: solving of a optimization problem
+-----------------------------------------------
+
+.. image:: _static/E15.png
+    :width: 400
+    :alt: Bar with joint and different loads.
+
+- given:
+    - :math:`F, a, q_0, \alpha`
+- wanted:
+    - ...

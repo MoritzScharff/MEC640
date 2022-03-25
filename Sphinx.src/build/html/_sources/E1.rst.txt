@@ -1,0 +1,65 @@
+Get ready for the course
+------------------------
+The following section introduces the tools and libraries used in the course.
+
+Tools
+*****
+
+- `Python 3.9.11 <https://www.python.org/downloads/windows/>`_
+    - for this course we use still Python 3.9 because it supports all used libraries without problems
+
+.. image:: _static/python.png
+    :width: 400
+    :alt: You MUST check the "Add ... Path" box.
+
+- `PyCharm Community Edition <https://www.jetbrains.com/de-de/pycharm/download/#section=windows>`_
+    - `YouTube Series from JetBrains : Getting started with PyCharm <https://www.youtube.com/playlist?list=PLQ176FUIyIUZ1mwB-uImQE-gmkwzjNLjP>`_
+    - `Turn on PEP8! <https://www.jetbrains.com/help/pycharm/tutorial-code-quality-assistance-tips-and-tricks.html>`_ ; `PEP8 Style Guide <https://peps.python.org/pep-0008/>`_
+
+- `GitHub Desktop <https://desktop.github.com/>`_
+    - `YouTube Tutorial <https://www.youtube.com/watch?v=iv8rSLsi1xo>`_
+
+Important libraries and packages
+********************************
+
+- `Numpy <https://numpy.org/>`_ ; `pip <https://pypi.org/project/numpy/>`_
+    - pip install numpy
+    - basic library for numeric data
+
+- `SymPy <https://www.sympy.org/en/index.html>`_ ; `pip <https://pypi.org/project/sympy/>`_
+    - pip install sympy
+    - basic library for symbolic data, contains complete modules for, e.g., `continuum mechanics <https://docs.sympy.org/latest/modules/physics/continuum_mechanics/index.html?highlight=mechanics>`_
+
+- `SciPy <https://scipy.org/>`_ ; `pip <https://pypi.org/project/scipy/>`_
+    - pip install scipy
+    - library for scientific computing
+
+- `Matplotlib <https://matplotlib.org/>`_ ; `pip <https://pypi.org/project/matplotlib/>`_
+    - pip install matplotlib
+    - library for plots
+
+- `Pandas <https://pandas.pydata.org/>`_ ; `pip <https://pypi.org/project/pandas/>`_
+    - pip install pandas
+    - library for data treatment
+
+- `Jupyter Notebook <https://jupyter.org/>`_ ; `pip <https://pypi.org/project/jupyter/>`_
+    - pip install jupyter
+    - environment to build a CAS with SymPy and Ipython
+
+- `Sphinx <https://www.sphinx-doc.org/en/master/>`_ ; `pip <https://pypi.org/project/Sphinx/>`_
+    - pip install Sphinx
+    - useful tool for automated code and (small) project documentation
+
+Further reading
+***************
+
+- `requirements.txt <https://www.jetbrains.com/help/pycharm/managing-dependencies.html>`_
+- `virtual environment <https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html>`_
+    - pip install virtualenv
+    - virtualenv venv
+    - venv/bin/activate
+    - deactivate
+- `Git-SCM <https://git-scm.com/>`_ you can use classic Git with bash commands or the PyCharm Plugin
+- `Visual Studio Code <https://code.visualstudio.com/>`_
+- `How to Write Beautiful Python Code With PEP 8 <https://realpython.com/python-pep8/>`_
+
