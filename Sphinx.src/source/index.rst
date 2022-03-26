@@ -6,9 +6,9 @@
 Welcome to MEC640's documentation!
 ================================================
 
-The course: **Temas de Diseño en Ingeniería Mecánica D - Aplicación de métodos matemáticos para ingeniería implementado por Python** should facilitate the students to solve tasks in scientific computing beyond extensive Software frameworks like `ANSYS <https://www.ansys.com/de-de>`_ .
+The course: **Temas de Diseño en Ingeniería Mecánica D - Aplicación de métodos matemáticos para ingeniería implementado por Python** should facilitate the students to solve tasks in scientific computing beyond extensive software frameworks like `ANSYS <https://www.ansys.com/de-de>`_ .
 
-Therefore, the are going to solve several exercise of well known problems by implementing them in Python, any created source code will be documented on this website for later review, reuse etc. The source files are available at `GitHub <https://github.com/MoritzScharff/MEC640>`_ too.
+Therefore, they are going to solve several exercise of well known problems by implementing them in Python, any created source code will be documented on this website for later review, reuse etc. The source files are available at `GitHub <https://github.com/MoritzScharff/MEC640>`_ too.
 
 Schedule
 --------

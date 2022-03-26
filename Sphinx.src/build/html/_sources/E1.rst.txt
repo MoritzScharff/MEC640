@@ -57,7 +57,8 @@ Further reading
 - `virtual environment <https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html>`_
     - pip install virtualenv
     - virtualenv venv
-    - venv/bin/activate
+    - cd ./venv/Scripts
+    - activate
     - deactivate
 - `Git-SCM <https://git-scm.com/>`_ you can use classic Git with bash commands or the PyCharm Plugin
 - `Visual Studio Code <https://code.visualstudio.com/>`_
