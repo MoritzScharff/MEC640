@@ -6,4 +6,5 @@ Exercises
    :caption: Contents:
 
    E1
+   E2
 

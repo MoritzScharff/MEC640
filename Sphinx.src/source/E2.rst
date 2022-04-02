@@ -1,20 +1,50 @@
 Basic syntax and commands
 -------------------------
-- varibalen defnieren
-native data types vs np data tyes vs sym data types
-- vector syntax, matrix
-- for schleifen
-- functionen lambda, equation, zuweisung, function def
-- solve lin sys symbolic
-- solve lin sys numeric
-- sovlve ode
-- solve ode sys
-- solve pde?
-- ploten
-- integrieren differenzieren
-- vektor operationen
-- display Math
-- subs
-- debugging in python und ws
-- jupyter notebook vs IDE / pycharm Integrated Development Environment
+The following section introduces some basic commands and concepts of python and some modules.
 
+Further Reading
+***************
+- `w3schools - python section <https://www.w3schools.com/python/default.asp>`_
+- `Geeks for Geeks - python section <https://www.geeksforgeeks.org/python-programming-language/?ref=shm>`_
+- `SymPy Tutorial <https://www.tutorialspoint.com/sympy/index.htm>`_
+
+PyCharm
+********
+.. literalinclude:: ../../Simulation/E2.py
+
+resources
+=========
+**__init__.py**
+
+.. literalinclude:: ../../Simulation/resources/__init__.py
+
+**FunOne.py**
+
+.. literalinclude:: ../../Simulation/resources/FunOne.py
+
+**FunTwo.py**
+
+.. literalinclude:: ../../Simulation/resources/FunTwo.py
+
+E2_fun.py
+=========
+.. automodule:: E2_fun
+   :members:
+
+Jupyter Notebook
+****************
+- Open powershell or command prompt
+- Go to your specific workspace
+
+.. code-block::
+
+    cd "workspace path"
+
+- open a new Jupyter Notebook by tipping:
+
+.. code-block::
+
+    jupyter notebook
+
+.. raw:: html
+    :file: E2_JupNote.html
