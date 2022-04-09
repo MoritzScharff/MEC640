@@ -194,7 +194,7 @@
 <li><p>set up system of linear equations to obtain the support reactions</p></li>
 <li><p>solve the system of linear equations using <strong>sympy.solve</strong></p></li>
 <li><p>set up system of linear equations to obtain the internal force equilibrium</p></li>
-<li><p>plot the internal force components along the beam axis (<span class="math notranslate nohighlight">\(x\)</span>-axis)</p></li>
+<li><p>plot the internal force components of <span class="math notranslate nohighlight">\(M_{bz1}, M_{bz2}, M_{bz3}\)</span> along the beam axis (<span class="math notranslate nohighlight">\(x\)</span>-axis)</p></li>
 </ul>
 </dd>
 </dl>
@@ -258,9 +258,10 @@
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
 
 <span class="c1"># Plot the Results</span>
-<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="o">...</span>
 </pre></div>
 </div>
 </section>

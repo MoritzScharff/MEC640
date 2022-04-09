@@ -98,7 +98,7 @@ E3.b - Task
     - set up system of linear equations to obtain the support reactions
     - solve the system of linear equations using **sympy.solve**
     - set up system of linear equations to obtain the internal force equilibrium
-    - plot the internal force components along the beam axis (:math:`x`-axis)
+    - plot the internal force components of :math:`M_{bz1}, M_{bz2}, M_{bz3}` along the beam axis (:math:`x`-axis)
 
 - **pseudo-code**:
 
@@ -161,6 +161,7 @@ E3.b - Task
     ... = sp.lambdify(..., 'numpy')
 
     # Plot the Results
-    f, (ax1, ax2) = plt.subplots(1, 2)
+    f, (ax1, ax2, ...) = plt.subplots(1, ...)
     ax1.plot(x, y1)
     ax2.plot(x, y2)
+    ...
