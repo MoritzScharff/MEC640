@@ -70,7 +70,7 @@ E3.a - Task
     # Set up piecewise functions
     ... = sp.Piecewise([fun1, condition1], [fun2, (condition2) & (condition3)], ...)
 
-    # Substitute parameters: F = 1; alpha  = pi/4; a = 10; q0 = 0.3
+    # Substitute parameters: L = 1; q0 = 0.3
     funName = funName.subs(...)
 
     # Create lambda function
