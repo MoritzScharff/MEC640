@@ -1,7 +1,7 @@
 Dynamics: solving of PDEs II
 ----------------------------
 
-.. image:: _static/E12.png
+.. image:: _static/E12_a.png
     :width: 400
     :alt: Bar with joint and different loads.
 
@@ -10,7 +10,7 @@ Dynamics: solving of PDEs II
 - wanted:
     - ...
 
-.. image:: _static/E13.png
+.. image:: _static/E12_b.png
     :width: 400
     :alt: Bar with joint and different loads.
 

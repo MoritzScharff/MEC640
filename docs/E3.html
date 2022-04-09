@@ -21,7 +21,8 @@
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Basic syntax and commands" href="E2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,8 +41,17 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="exercises.html">Exercises</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="E1.html">Get ready for the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E2.html">Basic syntax and commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Statics: solving of systems of linear equations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#e3-a-task">E3.a - Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e3-b-task">E3.b - Task</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -58,6 +68,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="exercises.html">Exercises</a> &raquo;</li>
       <li>Statics: solving of systems of linear equations</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/E3.rst.txt" rel="nofollow"> View page source</a>
@@ -70,7 +81,10 @@
              
   <section id="statics-solving-of-systems-of-linear-equations">
 <h1>Statics: solving of systems of linear equations<a class="headerlink" href="#statics-solving-of-systems-of-linear-equations" title="Permalink to this headline"></a></h1>
-<a class="reference internal image-reference" href="_images/E1.png"><img alt="Bar with joint and different loads." src="_images/E1.png" style="width: 400px;" /></a>
+<p>Use Juypter Notebook for symbolic calculus.</p>
+<section id="e3-a-task">
+<h2>E3.a - Task<a class="headerlink" href="#e3-a-task" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/E3_a.png"><img alt="Bar with joint and different loads." src="_images/E3_a.png" style="width: 400px;" /></a>
 <ul class="simple">
 <li><dl class="simple">
 <dt>given:</dt><dd><ul>
@@ -81,36 +95,183 @@
 </li>
 <li><dl class="simple">
 <dt>wanted:</dt><dd><ul>
-<li><p>static external and internal force equilibria, support reactions,</p></li>
-<li><p>plot of the components internal force equilibirum</p></li>
+<li><p>static external (support reactions) and internal force equilibria</p></li>
+<li><p>plot of the components internal force equilibrium</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt>procedure:</dt><dd><ul>
+<li><p>get function for distributed load <span class="math notranslate nohighlight">\(q(x)\)</span></p></li>
+<li><p>get components of the resulting moment/torque using <span class="math notranslate nohighlight">\(\vec{M} = \vec{r} \times \vec{F}\)</span></p></li>
+<li><p>set up system of linear equations to obtain the support reactions</p></li>
+<li><p>solve the system of linear equations using <strong>sympy.solve</strong></p></li>
+<li><p>set up system of linear equations to obtain the internal force equilibrium</p></li>
+<li><p>plot the internal force components along the beam axis (<span class="math notranslate nohighlight">\(x\)</span>-axis)</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/E2.png"><img alt="Bar with joint and different loads." src="_images/E2.png" style="width: 400px;" /></a>
+</dd>
+</dl>
+</li>
+<li><p><strong>pseudo-code</strong>:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do this task inside a jupyter notebook!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">variables</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">...</span>
+
+<span class="c1"># define symbols</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Derive q(x)</span>
+<span class="k">def</span> <span class="nf">q</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+
+<span class="c1"># Set up system of equations</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="c1"># Sole system of equations</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Assign values</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="p">,</span><span class="o">...</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="c1"># Internal forces reaction</span>
+<span class="c1"># define symbolic functions</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="o">...</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Set up equations</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Solve equations</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Assign values</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="o">....</span> <span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="c1"># Set up piecewise functions</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">([</span><span class="n">fun1</span><span class="p">,</span> <span class="n">condition1</span><span class="p">],</span> <span class="p">[</span><span class="n">fun2</span><span class="p">,</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">condition3</span><span class="p">)],</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Substitute parameters: F = 1; alpha  = pi/4; a = 10; q0 = 0.3</span>
+<span class="n">funName</span> <span class="o">=</span> <span class="n">funName</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Create lambda function</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the Results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="e3-b-task">
+<h2>E3.b - Task<a class="headerlink" href="#e3-b-task" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/E3_b.png"><img alt="Bar with joint and different loads." src="_images/E3_b.png" style="width: 400px;" /></a>
 <ul class="simple">
 <li><dl class="simple">
 <dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L, q_0\)</span></p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
+<li><p>static external (support reactions) and internal force equilibria</p></li>
+<li><p>plot of the components internal force equilibrium</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt>procedure:</dt><dd><ul>
+<li><p>get function for distributed load <span class="math notranslate nohighlight">\(q(x)\)</span></p></li>
+<li><p>get components of the resulting moment/torque using <span class="math notranslate nohighlight">\(\vec{M} = \vec{r} \times \vec{F}\)</span></p></li>
+<li><p>set up system of linear equations to obtain the support reactions</p></li>
+<li><p>solve the system of linear equations using <strong>sympy.solve</strong></p></li>
+<li><p>set up system of linear equations to obtain the internal force equilibrium</p></li>
+<li><p>plot the internal force components along the beam axis (<span class="math notranslate nohighlight">\(x\)</span>-axis)</p></li>
 </ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>pseudo-code</strong>:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do this task inside a jupyter notebook!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">variables</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">...</span>
+
+<span class="c1"># define symbols</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Derive torque</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="o">..</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="o">..</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="o">...</span>
+
+<span class="c1"># Derive q(x)</span>
+<span class="k">def</span> <span class="nf">q</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+
+<span class="c1"># Set up system of equations</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="c1"># Sole system of equations</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Assign values</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="p">,</span><span class="o">...</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="c1"># Internal forces reaction</span>
+<span class="c1"># define symbolic functions</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="o">...</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Set up equations</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Solve equations</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Assign values</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="o">....</span> <span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="c1"># Set up piecewise functions</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Piecewise</span><span class="p">([</span><span class="n">fun1</span><span class="p">,</span> <span class="n">condition1</span><span class="p">],</span> <span class="p">[</span><span class="n">fun2</span><span class="p">,</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">condition3</span><span class="p">)],</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Substitute parameters: F = 1; alpha  = pi/4; a = 10; q0 = 0.3</span>
+<span class="n">funName</span> <span class="o">=</span> <span class="n">funName</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Create lambda function</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the Results</span>
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="E2.html" class="btn btn-neutral float-left" title="Basic syntax and commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
