@@ -48,7 +48,7 @@ E3.a - Task
     ... = sp.Eq(..., ...)
     ...
 
-    # Sole system of equations
+    # Solve system of equations
     sol = sp.solve(...)
 
     # Assign values
@@ -78,6 +78,13 @@ E3.a - Task
 
     # Plot the Results
     plt.plot(...)
+
+- **Solution:**
+
+.. raw:: html
+    :file: E3_a.html
+
+
 
 E3.b - Task
 ***********
@@ -132,7 +139,7 @@ E3.b - Task
     ... = sp.Eq(..., ...)
     ...
 
-    # Sole system of equations
+    # Solve system of equations
     sol = sp.solve(...)
 
     # Assign values
