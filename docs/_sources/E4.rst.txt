@@ -3,18 +3,155 @@ Statics: solving of ODEs I
 
 .. image:: _static/E4_a.png
     :width: 400
-    :alt: Bar with joint and different loads.
+    :alt: Beams with different loads.
 
 - given:
-    - :math:`F, a, q_0, \alpha`
+    - :math:`F, q_0, L, h, b, E`
 - wanted:
-    - ...
+    - normal (bending) stress :math:`\sigma(x,y)`
+    - deformation of the beam :math:`v(x)`
+    - maximal stress :math:`\sigma_{max}` and maximal deformation :math:`v_{max}`
+- procedure:
+    - determine support reactions and internal force equilibrium
+    - define stress and deformation equations
+    - define boundary conditions
+    - solve deformation equation using the defined boundary conditions
+    - find :math:`v_{max}`
+    - find :math:`\sigma_{max}`
+    - plot configuration a) :math:`v(x)` for, e.g., :math:`F \in {0 N, 100 N, 200 N, 300 N, 400N}`
+      considering :math:`L=100 mm, h=2 mm, b=15mm, E=210000 \frac{N}{mm^2}`
+- **pseudo-code**:
+
+.. note::
+
+    Do this task inside a jupyter notebook!
+
+.. code-block::
+
+    clear variables
+
+    import sympy as sp
+    import ...
+
+    # define symbols
+    ..., ..., ... = sp.symbols(...)
+
+    # Derive q(x)
+    def q(...):
+        return ...
+
+    # Set up system of equations
+    ... = sp.Eq(..., ...)
+    ...
+
+    # Solve system of equations
+    sol = sp.solve(...)
+
+    # Assign values
+    ..., ..., ... ,... = sol.values()
+
+    # Internal forces reaction
+    # define symbolic functions
+    ... = sp.Function(...)(x)
+
+    # Set up equations
+    ... = sp.Eq(..., ...)
+
+    # Solve equations
+    ... = sp.solve(...)
+
+    # Assign values
+    ..., ..., ... = .... .values()
+
+    # Define Stress equation
+    eq = sp.Eq(sp.diff(.., x, x), ...)
+
+    # find maximum stress
+    ..sp.diff()
+
+    # Deformation
+    # define deformation ordinary differential equation (ode)
+
+    # define boundary conditions and solve ode
+    .. = sp.dsolve(.., ics = {..., ..., ...})
+    ## or
+    .. = sp.integrate() + constant
+
+    # find v_max
+    ... = sp.diff()
+
+    # Create lambda function
+    ... = sp.lambdify(..., 'numpy')
+
+    # Plot the Results
+    plt.plot(...)
+
 
 .. image:: _static/E4_b.png
     :width: 400
-    :alt: Bar with joint and different loads.
+    :alt: Sketch of a shaft.
+A shaft inside a gear should be optimized. The solid (index S) shaft should be replaced by a hollow (index H) one.
 
 - given:
-    - :math:`F, a, q_0, \alpha`
+    - :math:`M_0, D, d, L`
 - wanted:
-    - ...
+    - ratio of mass of saved material :math:`\mu = \frac{m_H}{m_S}`
+    - stress increase :math:`\kappa = \frac{\tau_H}{\tau_S}`
+    - deformation increase :math:`\epsilon = \frac{\varphi_H}{\varphi_S}`
+    - find a new :math:`D_H` considering a diameter ratio :math:`\epsilon=\frac{d_H}{D_H}` and the condition that
+      :math:`\tau_{Hmax} = \tau_{Smax}`
+
+- **pseudo-code**:
+
+.. note::
+
+    Do this task inside a jupyter notebook!
+
+.. code-block::
+
+    clear variables
+
+    import sympy as sp
+    import ...
+
+    # define symbols
+    ..., ..., ... = sp.symbols(...)
+
+    # Saved Material
+    def volumeCylinder(...):
+        return ...
+
+    ## calculate mu
+    mu = ...
+    ## simplify solution
+
+    # Stress increase
+    def tau():
+        return ...
+
+    ## Define Ip (polar second moment of area)
+    IpS = ... -> solid cylinder
+    IpH = ... -> hollow cylinder
+
+    ## calculate kappa
+    kappa = ...
+    ## simplify solution
+
+    # Deformation increase
+    def dphidx():
+        return ...
+
+    ## calculate epsilon
+    epsilon = ...
+    ## simplify solution
+
+    # Find new outer diameter for the hollow shaft
+    ## set up modeling equation
+    eq = sp.Eq(..., ...)
+
+    ## solve modelling equation for DH
+    ... = sp.solve(...)
+    ## select correct solution
+
+
+
