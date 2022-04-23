@@ -1,6 +1,9 @@
 Statics: solving of ODEs I
 --------------------------
 
+E4.a - Task
+***********
+
 .. image:: _static/E4_a.png
     :width: 400
     :alt: Beams with different loads.
@@ -86,6 +89,8 @@ Statics: solving of ODEs I
     # Plot the Results
     plt.plot(...)
 
+E4.b - Task
+***********
 
 .. image:: _static/E4_b.png
     :width: 400
