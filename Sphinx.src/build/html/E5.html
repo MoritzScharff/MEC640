@@ -18,9 +18,11 @@
         <script src="_static/doctools.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Statics: solving of ODEs I" href="E4.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,8 +41,19 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="exercises.html">Exercises</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="E1.html">Get ready for the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E2.html">Basic syntax and commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E3.html">Statics: solving of systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E4.html">Statics: solving of ODEs I</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Statics: solving of ODEs II</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#e5-a-task">E5.a - Task</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e5-b-task">E5.b - Task</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -57,6 +70,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="exercises.html">Exercises</a> &raquo;</li>
       <li>Statics: solving of ODEs II</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/E5.rst.txt" rel="nofollow"> View page source</a>
@@ -69,13 +83,139 @@
              
   <section id="statics-solving-of-odes-ii">
 <h1>Statics: solving of ODEs II<a class="headerlink" href="#statics-solving-of-odes-ii" title="Permalink to this headline"></a></h1>
-<p>missing, hier kommt irgendwas mit Temperatur Dehnung</p>
+<section id="e5-a-task">
+<h2>E5.a - Task<a class="headerlink" href="#e5-a-task" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/E5_a.png"><img alt="Rod and bearings/supports." src="_images/E5_a.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>given:</dt><dd><ul>
+<li><p><span class="math notranslate nohighlight">\(L_1 = 300mm, L_2 = 301mm, A = 10mm^2, E = 210000MPa, \alpha = 12 \cdot 10^{-6} K^{-1}\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>wanted:</dt><dd><ul>
+<li><p>Necessary heat <span class="math notranslate nohighlight">\(\Delta T\)</span> that the rod can be connected to support B</p></li>
+<li><p>Stress <span class="math notranslate nohighlight">\(\sigma\)</span> after cool-down</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>procedure:</dt><dd><ul>
+<li><p>use: <span class="math notranslate nohighlight">\(\frac{du}{dx} = \frac{N(x)}{E\,A} + \alpha \, \Delta T\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>pseudo-code</strong>:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do this task inside a jupyter notebook!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">variables</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">...</span>
+
+<span class="c1"># define symbols</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># define the deformation equation</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># solve the ODE</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># determine the necessary temperature</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Calculate the resulting stress</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="c1">## determine N(x)</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># Interpret your result.</span>
+</pre></div>
+</div>
+</section>
+<section id="e5-b-task">
+<h2>E5.b - Task<a class="headerlink" href="#e5-b-task" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/E5_b.png"><img alt="Hanging rod." src="_images/E5_b.png" style="width: 120px;" /></a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>given:</dt><dd><ul>
+<li><p><span class="math notranslate nohighlight">\(F = 10N, g = 9.81\frac{m}{s^2}, A=4mm^2, L = 10mm, \rho = 7850\frac{kg}{m^3},\)</span>
+<span class="math notranslate nohighlight">\(\alpha = 12 \cdot 10^{-6} K^{-1}, E = 210000MPa\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>wanted:</dt><dd><ul>
+<li><p>Value of <span class="math notranslate nohighlight">\(\Delta T\)</span> in order to compensate <span class="math notranslate nohighlight">\(F\)</span> and the dead weight of the rod</p></li>
+<li><p>plot deformation <span class="math notranslate nohighlight">\(u\)</span></p></li>
+<li><p>plot stress <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>procedure:</dt><dd><ul>
+<li><p>use: <span class="math notranslate nohighlight">\(\frac{du}{dx} = \frac{N(x)}{E\,A} + \alpha \, \Delta T\)</span></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>pseudo-code</strong>:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do this task inside a jupyter notebook!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">variables</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">...</span>
+
+<span class="c1"># define symbols</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># determine internal force equilibrium</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Definition of the deformation equation</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Solution of the ODE with BC</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Calculate temperature in order to compensate length change of the rod</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Get resulting deformation equation</span>
+
+<span class="c1"># Get resulting Stress equation</span>
+
+<span class="c1"># Plot results</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="E4.html" class="btn btn-neutral float-left" title="Statics: solving of ODEs I" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

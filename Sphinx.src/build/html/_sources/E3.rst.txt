@@ -172,3 +172,6 @@ E3.b - Task
     ax1.plot(x, y1)
     ax2.plot(x, y2)
     ...
+
+.. raw:: html
+    :file: E3_b.html
