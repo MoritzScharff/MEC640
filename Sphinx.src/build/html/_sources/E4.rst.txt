@@ -89,6 +89,15 @@ E4.a - Task
     # Plot the Results
     plt.plot(...)
 
+.. raw:: html
+    :file: E4_a_a.html
+
+.. raw:: html
+    :file: E4_a_b.html
+
+.. raw:: html
+    :file: E4_a_c.html
+
 E4.b - Task
 ***********
 
@@ -157,6 +166,4 @@ A shaft inside a gear should be optimized. The solid (index S) shaft should be r
     ## solve modelling equation for DH
     ... = sp.solve(...)
     ## select correct solution
-
-
 

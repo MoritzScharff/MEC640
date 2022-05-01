@@ -1,20 +1,115 @@
 Statics: solving of eigenvalue problems
 ---------------------------------------
 
+E6.a - Task
+***********
 .. image:: _static/E6_a.png
     :width: 400
     :alt: Bar with joint and different loads.
 
 - given:
-    - :math:`F, a, q_0, \alpha`
+    - :math:`E, I_z, l`
 - wanted:
-    - ...
+    - the force :math:`F_{bck}` that causes buckling of the given rod
+    - compare your results to the corresponding Euler case
 
+- procedure:
+    - get function for distributed load :math:`q(x)`
+    - get components of the resulting moment/torque using :math:`\vec{M} = \vec{r} \times \vec{F}`
+    - set up system of linear equations to obtain the support reactions
+    - solve the system of linear equations using **sympy.solve**
+    - set up system of linear equations to obtain the internal force equilibrium
+    - plot the internal force components along the beam axis (:math:`x`-axis)
+
+- **pseudo-code**:
+
+.. note::
+
+    Do this task inside a jupyter notebook!
+
+.. code-block::
+
+    clear variables
+
+    import sympy as sp
+    import ...
+
+    # define symbols
+    ..., ..., ... = sp.symbols(...)
+
+    # determine internal force equilibrium
+    ... = sp.Eq(..., ...)
+
+    # Definition of the deformation equation
+    ... = sp.Eq(sp.Derivative(..., ...), ...)
+
+    # Solution of the ODE with BC
+    ... = sp.dsolve(..., ...)
+
+    # Calculate temperature in order to compensate length change of the rod
+    ... = sp.Eq(..., ...)
+    ... = sp.solve(..., ...)
+
+    # Get resulting deformation equation
+
+    # Get resulting Stress equation
+
+    # Plot results
+    ... = sp.lambdify(..., ..., 'numpy')
+    plt.plot(..., ...)
+
+
+E6.b - Task
+***********
 .. image:: _static/E6_b.png
     :width: 400
     :alt: Bar with joint and different loads.
 
 - given:
-    - :math:`F, a, q_0, \alpha`
+    - :math:`L, c_t, E, I_z`
 - wanted:
-    - ...
+    - the force :math:`F_{bck}` that causes buckling of the given rod
+- procedure:
+    - get function for distributed load :math:`q(x)`
+    - get components of the resulting moment/torque using :math:`\vec{M} = \vec{r} \times \vec{F}`
+    - set up system of linear equations to obtain the support reactions
+    - solve the system of linear equations using **sympy.solve**
+    - set up system of linear equations to obtain the internal force equilibrium
+    - plot the internal force components along the beam axis (:math:`x`-axis)
+
+- **pseudo-code**:
+
+.. note::
+
+    Do this task inside a jupyter notebook!
+
+.. code-block::
+
+    clear variables
+
+    import sympy as sp
+    import ...
+
+    # define symbols
+    ..., ..., ... = sp.symbols(...)
+
+    # determine internal force equilibrium
+    ... = sp.Eq(..., ...)
+
+    # Definition of the deformation equation
+    ... = sp.Eq(sp.Derivative(..., ...), ...)
+
+    # Solution of the ODE with BC
+    ... = sp.dsolve(..., ...)
+
+    # Calculate temperature in order to compensate length change of the rod
+    ... = sp.Eq(..., ...)
+    ... = sp.solve(..., ...)
+
+    # Get resulting deformation equation
+
+    # Get resulting Stress equation
+
+    # Plot results
+    ... = sp.lambdify(..., ..., 'numpy')
+    plt.plot(..., ...)
