@@ -104,6 +104,7 @@ E4.b - Task
 .. image:: _static/E4_b.png
     :width: 400
     :alt: Sketch of a shaft.
+
 A shaft inside a gear should be optimized. The solid (index S) shaft should be replaced by a hollow (index H) one.
 
 - given:
@@ -167,3 +168,5 @@ A shaft inside a gear should be optimized. The solid (index S) shaft should be r
     ... = sp.solve(...)
     ## select correct solution
 
+.. raw:: html
+    :file: E4_b.html
