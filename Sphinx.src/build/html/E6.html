@@ -91,12 +91,12 @@
 </li>
 <li><dl class="simple">
 <dt>procedure:</dt><dd><ul>
-<li><p>get function for distributed load <span class="math notranslate nohighlight">\(q(x)\)</span></p></li>
-<li><p>get components of the resulting moment/torque using <span class="math notranslate nohighlight">\(\vec{M} = \vec{r} \times \vec{F}\)</span></p></li>
-<li><p>set up system of linear equations to obtain the support reactions</p></li>
-<li><p>solve the system of linear equations using <strong>sympy.solve</strong></p></li>
-<li><p>set up system of linear equations to obtain the internal force equilibrium</p></li>
-<li><p>plot the internal force components along the beam axis (<span class="math notranslate nohighlight">\(x\)</span>-axis)</p></li>
+<li><p>get the support reactions (deformed state)</p></li>
+<li><p>get the internal force components (deformed state)</p></li>
+<li><p>define the deformation equations using: <span class="math notranslate nohighlight">\(\frac{d^2v}{dx^2} = \frac{M_{bz(x)}}{E\,I_z}\)</span></p></li>
+<li><p>solve the deformation equations using <strong>sympy.dsolve</strong></p></li>
+<li><p>set up a system of nonlinear equations using the corresponding boundary conditions</p></li>
+<li><p>determine the force corresponding to first buckling mode (<span class="math notranslate nohighlight">\(F_{bck}\)</span>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -115,26 +115,33 @@
 <span class="c1"># define symbols</span>
 <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 
+<span class="c1"># determine support reactions</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
 <span class="c1"># determine internal force equilibrium</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
 <span class="c1"># Definition of the deformation equation</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Solution of the ODE with BC</span>
+<span class="c1"># Solution of the ODE without BC</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Calculate temperature in order to compensate length change of the rod</span>
+<span class="c1"># Set up system of nonlinear equations using the BC</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Get resulting deformation equation</span>
+<span class="c1"># Solve the system of nonlinear equations</span>
+<span class="n">CoeffMat</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">example</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">EVE</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Coef</span><span class="o">.</span><span class="n">Mat</span><span class="o">.</span><span class="n">det</span><span class="p">())</span>
 
-<span class="c1"># Get resulting Stress equation</span>
+<span class="n">EVE</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdiy</span><span class="p">(</span><span class="o">...</span> <span class="n">EVE</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Plot results</span>
-<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="c1"># Plot EVE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">EVE</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+
+<span class="c1"># Solve EVE</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="o">...</span> <span class="n">EVE</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -158,12 +165,12 @@
 </li>
 <li><dl class="simple">
 <dt>procedure:</dt><dd><ul>
-<li><p>get function for distributed load <span class="math notranslate nohighlight">\(q(x)\)</span></p></li>
-<li><p>get components of the resulting moment/torque using <span class="math notranslate nohighlight">\(\vec{M} = \vec{r} \times \vec{F}\)</span></p></li>
-<li><p>set up system of linear equations to obtain the support reactions</p></li>
-<li><p>solve the system of linear equations using <strong>sympy.solve</strong></p></li>
-<li><p>set up system of linear equations to obtain the internal force equilibrium</p></li>
-<li><p>plot the internal force components along the beam axis (<span class="math notranslate nohighlight">\(x\)</span>-axis)</p></li>
+<li><p>get the support reactions (deformed state)</p></li>
+<li><p>get the internal force components (deformed state)</p></li>
+<li><p>define the deformation equation using: <span class="math notranslate nohighlight">\(\frac{d^2v}{dx^2} = \frac{M_{bz(x)}}{E\,I_z}\)</span></p></li>
+<li><p>solve the deformation equation using <strong>sympy.dsolve</strong></p></li>
+<li><p>set up a system of nonlinear equations using the corresponding boundary conditions</p></li>
+<li><p>determine the force corresponding to first buckling mode (<span class="math notranslate nohighlight">\(F_{bck}\)</span>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -182,26 +189,33 @@
 <span class="c1"># define symbols</span>
 <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 
+<span class="c1"># determine support reactions</span>
+<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
 <span class="c1"># determine internal force equilibrium</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
 <span class="c1"># Definition of the deformation equation</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Derivative</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Solution of the ODE with BC</span>
+<span class="c1"># Solution of the ODE without BC</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dsolve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Calculate temperature in order to compensate length change of the rod</span>
+<span class="c1"># Set up system of nonlinear equations using the BC</span>
 <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Get resulting deformation equation</span>
+<span class="c1"># Solve the system of nonlinear equations</span>
+<span class="n">CoeffMat</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">example</span><span class="o">.</span><span class="n">rhs</span><span class="o">.</span><span class="n">coeff</span><span class="p">(</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">EVE</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Coef</span><span class="o">.</span><span class="n">Mat</span><span class="o">.</span><span class="n">det</span><span class="p">())</span>
 
-<span class="c1"># Get resulting Stress equation</span>
+<span class="n">EVE</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdiy</span><span class="p">(</span><span class="o">...</span> <span class="n">EVE</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
 
-<span class="c1"># Plot results</span>
-<span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="c1"># Plot EVE</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">EVE</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+
+<span class="c1"># Solve EVE</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="o">...</span> <span class="n">EVE</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>

@@ -14,12 +14,12 @@ E6.a - Task
     - compare your results to the corresponding Euler case
 
 - procedure:
-    - get function for distributed load :math:`q(x)`
-    - get components of the resulting moment/torque using :math:`\vec{M} = \vec{r} \times \vec{F}`
-    - set up system of linear equations to obtain the support reactions
-    - solve the system of linear equations using **sympy.solve**
-    - set up system of linear equations to obtain the internal force equilibrium
-    - plot the internal force components along the beam axis (:math:`x`-axis)
+    - get the support reactions (deformed state)
+    - get the internal force components (deformed state)
+    - define the deformation equations using: :math:`\frac{d^2v}{dx^2} = \frac{M_{bz(x)}}{E\,I_z}`
+    - solve the deformation equations using **sympy.dsolve**
+    - set up a system of nonlinear equations using the corresponding boundary conditions
+    - determine the force corresponding to first buckling mode (:math:`F_{bck}`)
 
 - **pseudo-code**:
 
@@ -37,27 +37,33 @@ E6.a - Task
     # define symbols
     ..., ..., ... = sp.symbols(...)
 
+    # determine support reactions
+    ... = sp.Eq(..., ...)
+
     # determine internal force equilibrium
     ... = sp.Eq(..., ...)
 
     # Definition of the deformation equation
     ... = sp.Eq(sp.Derivative(..., ...), ...)
 
-    # Solution of the ODE with BC
+    # Solution of the ODE without BC
     ... = sp.dsolve(..., ...)
 
-    # Calculate temperature in order to compensate length change of the rod
+    # Set up system of nonlinear equations using the BC
     ... = sp.Eq(..., ...)
-    ... = sp.solve(..., ...)
 
-    # Get resulting deformation equation
+    # Solve the system of nonlinear equations
+    CoeffMat = sp.Matrix([[example.rhs.coeff('C1') ...)
+    EVE = sp.Eq(0, Coef.Mat.det())
 
-    # Get resulting Stress equation
+    EVE = sp.lambdiy(... EVE(F) ...)
 
-    # Plot results
-    ... = sp.lambdify(..., ..., 'numpy')
-    plt.plot(..., ...)
+    # Plot EVE
+    plt.plot(F, EVE(F)
 
+    # Solve EVE
+    from scipy.optimize import fsolve
+    sol = fsolve(... EVE(F))
 
 E6.b - Task
 ***********
@@ -70,12 +76,12 @@ E6.b - Task
 - wanted:
     - the force :math:`F_{bck}` that causes buckling of the given rod
 - procedure:
-    - get function for distributed load :math:`q(x)`
-    - get components of the resulting moment/torque using :math:`\vec{M} = \vec{r} \times \vec{F}`
-    - set up system of linear equations to obtain the support reactions
-    - solve the system of linear equations using **sympy.solve**
-    - set up system of linear equations to obtain the internal force equilibrium
-    - plot the internal force components along the beam axis (:math:`x`-axis)
+    - get the support reactions (deformed state)
+    - get the internal force components (deformed state)
+    - define the deformation equation using: :math:`\frac{d^2v}{dx^2} = \frac{M_{bz(x)}}{E\,I_z}`
+    - solve the deformation equation using **sympy.dsolve**
+    - set up a system of nonlinear equations using the corresponding boundary conditions
+    - determine the force corresponding to first buckling mode (:math:`F_{bck}`)
 
 - **pseudo-code**:
 
@@ -93,23 +99,31 @@ E6.b - Task
     # define symbols
     ..., ..., ... = sp.symbols(...)
 
+    # determine support reactions
+    ... = sp.Eq(..., ...)
+
     # determine internal force equilibrium
     ... = sp.Eq(..., ...)
 
     # Definition of the deformation equation
     ... = sp.Eq(sp.Derivative(..., ...), ...)
 
-    # Solution of the ODE with BC
+    # Solution of the ODE without BC
     ... = sp.dsolve(..., ...)
 
-    # Calculate temperature in order to compensate length change of the rod
+    # Set up system of nonlinear equations using the BC
     ... = sp.Eq(..., ...)
-    ... = sp.solve(..., ...)
 
-    # Get resulting deformation equation
+    # Solve the system of nonlinear equations
+    CoeffMat = sp.Matrix([[example.rhs.coeff('C1') ...)
+    EVE = sp.Eq(0, Coef.Mat.det())
 
-    # Get resulting Stress equation
+    EVE = sp.lambdiy(... EVE(F) ...)
 
-    # Plot results
-    ... = sp.lambdify(..., ..., 'numpy')
-    plt.plot(..., ...)
+    # Plot EVE
+    plt.plot(F, EVE(F)
+
+    # Solve EVE
+    from scipy.optimize import fsolve
+    sol = fsolve(... EVE(F))
+

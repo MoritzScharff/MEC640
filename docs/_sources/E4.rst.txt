@@ -108,12 +108,12 @@ E4.b - Task
 A shaft inside a gear should be optimized. The solid (index S) shaft should be replaced by a hollow (index H) one.
 
 - given:
-    - :math:`M_0, D, d, L`
+    - :math:`M_0, D, d, L, E, G`
 - wanted:
     - ratio of mass of saved material :math:`\mu = \frac{m_H}{m_S}`
     - stress increase :math:`\kappa = \frac{\tau_H}{\tau_S}`
     - deformation increase :math:`\epsilon = \frac{\varphi_H}{\varphi_S}`
-    - find a new :math:`D_H` considering a diameter ratio :math:`\epsilon=\frac{d_H}{D_H}` and the condition that
+    - find a new :math:`D_H` considering a diameter ratio :math:`\varepsilon=\frac{d_H}{D_H}` and the condition that
       :math:`\tau_{Hmax} = \tau_{Smax}`
 
 - **pseudo-code**:
