@@ -65,6 +65,9 @@ E6.a - Task
     from scipy.optimize import fsolve
     sol = fsolve(... EVE(F))
 
+
+
+
 E6.b - Task
 ***********
 .. image:: _static/E6_b.png

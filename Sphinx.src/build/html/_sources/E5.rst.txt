@@ -49,6 +49,10 @@ E5.a - Task
 
     # Interpret your result.
 
+
+.. raw:: html
+    :file: E5_a.html
+
 E5.b - Task
 ***********
 
@@ -102,6 +106,7 @@ E5.b - Task
     ... = sp.lambdify(..., ..., 'numpy')
     plt.plot(..., ...)
 
-
+.. raw:: html
+    :file: E5_b.html
 
 
