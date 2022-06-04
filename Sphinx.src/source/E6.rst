@@ -65,8 +65,8 @@ E6.a - Task
     from scipy.optimize import fsolve
     sol = fsolve(... EVE(F))
 
-
-
+.. raw:: html
+    :file: E6_a.html
 
 E6.b - Task
 ***********
@@ -130,3 +130,5 @@ E6.b - Task
     from scipy.optimize import fsolve
     sol = fsolve(... EVE(F))
 
+.. raw:: html
+    :file: E6_b.html
