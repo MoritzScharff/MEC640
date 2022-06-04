@@ -130,5 +130,3 @@ E6.b - Task
     from scipy.optimize import fsolve
     sol = fsolve(... EVE(F))
 
-.. raw:: html
-    :file: E6_b.html
