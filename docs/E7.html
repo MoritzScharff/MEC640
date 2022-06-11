@@ -99,6 +99,7 @@
 <li><p><span class="math notranslate nohighlight">\(k\)</span> - sping constant, <span class="math notranslate nohighlight">\(\frac{k}{2}\)</span> per spring <span class="math notranslate nohighlight">\([\frac{N}{m}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\omega_y\)</span> - circular natural frequency of the cylinder <span class="math notranslate nohighlight">\([\frac{rad}{s}]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(L\)</span> - length of the cylinder <span class="math notranslate nohighlight">\([m]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F_L = \frac{1}{2} \rho u^2 D C_L \sin(\omega_s t)\)</span></p></li>
 </ul>
 </dd>
 </dl>
@@ -116,7 +117,7 @@
 <dt>Frequency spectrum of the system for the following parameters (unrealistic example values!):</dt><dd><ul>
 <li><p><span class="math notranslate nohighlight">\(\rho = 1.2, u = 5, D = 0.005, L = 0.2,  C_L = 0.01, \omega_s = 3, m = 7850 \cdot \frac{\pi \cdot D^2}{2} \cdot L\)</span></p></li>
 <li><p>try different values for <span class="math notranslate nohighlight">\(k, c\)</span></p></li>
-<li><p>check the documentation of scipy for a FFT example</p></li>
+<li><p>check the documentation of scipy for a FFT example: <a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/fft.html">https://docs.scipy.org/doc/scipy/tutorial/fft.html</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -141,7 +142,7 @@
 </dl>
 </li>
 <li><p>solve the equation of motion using <strong>sympy.dsolve()</strong> considering the ICS</p></li>
-<li><p>plot the solution for <span class="math notranslate nohighlight">\(t \in {0..10}\)</span></p></li>
+<li><p>plot the solution for <span class="math notranslate nohighlight">\(t \in {0..10}\)</span> s</p></li>
 <li><p>do a FFT to find the natural frequency and the vortex shedding frequency</p></li>
 </ul>
 </dd>

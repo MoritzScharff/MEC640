@@ -28,7 +28,7 @@ An elastic supported cylinder (steel) inside a constant air flow. It is assumed 
     - :math:`\omega_y` - circular natural frequency of the cylinder :math:`[\frac{rad}{s}]`
     - :math:`L` - length of the cylinder :math:`[m]`
 
-    - : math: `F_L = \frac{1}{2} \rho u^2 D C_L \sin(\omega_s t)`
+    - :math:`F_L = \frac{1}{2} \rho u^2 D C_L \sin(\omega_s t)`
 - wanted:
     - Equation of motion using Lagrange equation of second kind
         - considering: :math:`y(0) = 0, \dot{y}(0) = 0`
