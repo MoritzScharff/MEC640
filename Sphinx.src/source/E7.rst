@@ -93,3 +93,5 @@ An elastic supported cylinder (steel) inside a constant air flow. It is assumed 
     # perform fft
     ...
 
+.. raw:: html
+    :file: E7.html
