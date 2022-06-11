@@ -7,6 +7,12 @@ Fluid dynamics: solving of ODEs III
 
 An elastic supported cylinder (steel) inside a constant air flow. It is assumed that the cylinder stays in rest in its equilibrium state at the beginning.
 
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Eh_vOcXazaU?start=75" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 - given:
     - :math:`\rho` - fluid density :math:`\frac{kg}{m^3}`
     - :math:`u` - free stream velocity :math:`[\frac{m}{s}]`
