@@ -3,9 +3,85 @@ Fluid dynamics: solving of ODEs III
 
 .. image:: _static/E7.png
     :width: 400
-    :alt: Bar with joint and different loads.
+    :alt: Cylinder and coordinate system. Rigid cylinder mode shown. Adapted from Blevins 1994.
+
+An elastic supported cylinder (steel) inside a constant air flow. It is assumed that the cylinder stays in rest in its equilibrium state at the beginning.
 
 - given:
-    - :math:`F, a, q_0, \alpha`
+    - :math:`\rho` - fluid density :math:`\frac{kg}{m^3}`
+    - :math:`u` - free stream velocity :math:`[\frac{m}{s}]`
+    - :math:`D` - cylinder diameter :math:`[m]`
+    - :math:`C_L` - lift coefficient :math:`[-]`
+    - :math:`\omega_s` - circular vortex shedding frequency :math:`[\frac{rad}{s}]`
+    - :math:`t` - time :math:`[s]`
+    - :math:`F_L` - lift force :math:`[\frac{N}{m}]`
+    - :math:`y(t)` - vertical displacement of the cylinder :math:`[m]`
+    - :math:`m` - mass the cylinder, neglecting added mass :math:`[\frac{kg}{m}]`
+    - :math:`c` - damping coefficient, :math:`\frac{c}{2}` per dashpot, considering viscous damping (Stokes) :math:`[\frac{N \cdot s}{m}]`
+    - :math:`k` - sping constant, :math:`\frac{k}{2}` per spring :math:`[\frac{N}{m}]`
+    - :math:`\omega_y` - circular natural frequency of the cylinder :math:`[\frac{rad}{s}]`
+    - :math:`L` - length of the cylinder :math:`[m]`
 - wanted:
-    - ...
+    - Equation of motion using Lagrange equation of second kind
+        - considering: :math:`y(0) = 0, \dot{y}(0) = 0`
+    - Frequency spectrum of the system for the following parameters (unrealistic example values!):
+        - :math:`\rho = 1.2, u = 5, D = 0.005, L = 0.2,  C_L = 0.01, \omega_s = 3, m = 7850 \cdot \frac{\pi \cdot D^2}{2} \cdot L`
+        - try different values for :math:`k, c`
+        - check the documentation of scipy for a FFT example
+
+- procedure:
+    - define symbols and functions
+    - get kinetic energy
+    - get potential energy
+    - get dissipation function
+    - get applied forces
+    - define Lagrangian
+    - apply formalism to get Euler-Lagrange equation / equation of motion
+        - :math:`\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}(t)}\right) - \frac{\partial L}{\partial q(t)} = -\frac{\partial d}{\partial \dot{q}(t)} + F \frac{\partial r_f}{\partial q(t)}`
+    - solve the equation of motion using **sympy.dsolve()** considering the ICS
+    - plot the solution for :math:`t \in {0..10}`
+    - do a FFT to find the natural frequency and the vortex shedding frequency
+
+- **pseudo-code**:
+
+.. note::
+
+    Do this task inside a jupyter notebook!
+
+.. code-block::
+
+    clear variables
+
+    import sympy as sp
+    import ...
+
+    # define symbols
+    ..., ..., ... = sp.symbols(...)
+
+    # define the components of the Lagrangian
+    T = ... # kinetic energy
+    U = ... # potential energy
+    d = ... # dissipation function
+    F = ... # general forces
+
+    # calculate the Lagrangian
+    L = T-U
+
+    # apply the formalism
+    ...
+
+    # solve the ODE
+    sol = sp.dsolve(.., ics={...})
+
+    # substitute values
+    sol = sol.rhs.subs([(..,..),(..,..)...])
+
+    # define lambda function
+    fun =  sp.lambdify(...)
+
+    # plot results
+    plt.plot(...,...)
+
+    # perform fft
+    ...
+

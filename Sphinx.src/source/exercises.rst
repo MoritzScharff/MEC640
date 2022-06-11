@@ -11,4 +11,5 @@ Exercises
    E4
    E5
    E6
+   E7
 
