@@ -1,11 +1,105 @@
 Dynamics: solving of systems of ODEs I
 --------------------------------------
 
-.. image:: _static/E9.png
+.. image:: _static/E9n.png
     :width: 400
-    :alt: Bar with joint and different loads.
+    :alt: Elastic pendulum.
+
 
 - given:
-    - :math:`F, a, q_0, \alpha`
+    - :math:`t` - time
+    - :math:`x(t)` - global coordinate
+    - :math:`y(t)` - global coordinate
+    - :math:`\phi(t)` - angle of rotation
+    - :math:`\lambda(t)` - length of the spring / the elastic pendulum
+    - :math:`\lambda_0 = 200` - initial length of the spring / the elastic pendulum
+    - :math:`m = 20` - point mass at the end of the pendulum
+    - :math:`c = 100` - spring stiffness
+    - :math:`g = 9.81` - gravitational acceleration
+    - :math:`^{\cdot}` - derivative with respect to time
+
 - wanted:
-    - ...
+    - Equation of motion using Lagrange equation of second kind
+    - Track of the point mass
+        - animated plot
+
+- procedure:
+    - define symbols and functions
+    - get kinetic energy
+    - get potential energy
+    - get dissipation function
+    - get applied forces
+    - define Lagrangian
+    - apply formalism to get Euler-Lagrange equation / equation of motion
+        - :math:`\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}(t)}\right) - \frac{\partial L}{\partial q(t)} = -\frac{\partial d}{\partial \dot{q}(t)} + F \frac{\partial r_f}{\partial q(t)}`
+    - solve the equation of motion using **scipy.odeint()** considering ICS and :math:`t \in {0..20}` s
+
+- **pseudo-code**:
+
+.. note::
+
+    Do this task inside a jupyter notebook!
+
+.. code-block::
+
+    clear variables
+
+    import sympy as sp
+    import ...
+
+    # define symbols
+    ..., ..., ... = sp.symbols(...)
+
+    # define the components of the Lagrangian
+    T = ... # kinetic energy
+    U = ... # potential energy
+    d = ... # dissipation function
+    F = ... # general forces
+
+    # calculate the Lagrangian
+    L = T-U
+
+    # apply the formalism
+    EoMo1 = ...
+
+    EoMo2 = ...
+
+    # substitute values
+    EoMo1 = EoMo1.subs([(..,..),(..,..)...])
+    ...
+
+    # define lambda function
+    fun1 =  sp.lambdify(...)
+    fun2 =  sp.lambdify(...)
+
+    # Setup system of ordinary differential equations of first order
+    # in order to solve the ordinary differential equations of second order
+
+    def ode_sys(...):
+        ...
+        return
+
+    # Solve the IVP
+    from scipy.integrate import odeint
+    sol = odeint(odesys, iniVal, t,...)
+
+    # Transform polar coordinates to cartesian coordinates
+    x = ...
+    y = ...
+
+    # plot results
+    import time
+    from IPython import display
+
+    for ii in ..... :
+        plt.plot(...,...)
+
+        plt.xlim(-150, 150)
+        plt.ylim(-300, 0)
+        plt.gca().set_aspect('equal', 'box')
+
+        display.clear_output(wait=True)
+        display.display(plt.gcf())
+        time.sleep(0.00000001)
+        plt.close()
+
