@@ -21,7 +21,8 @@
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Dynamics: solving of systems of ODEs I" href="E9.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,8 +41,19 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="exercises.html">Exercises</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="exercises.html">Exercises</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="E1.html">Get ready for the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E2.html">Basic syntax and commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E3.html">Statics: solving of systems of linear equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E4.html">Statics: solving of ODEs I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E5.html">Statics: solving of ODEs II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E6.html">Statics: solving of eigenvalue problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E7.html">Fluid dynamics: solving of ODEs III</a></li>
+<li class="toctree-l2"><a class="reference internal" href="E9.html">Dynamics: solving of systems of ODEs I</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mechatronics: solving of systems of ODEs II</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -58,6 +70,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="exercises.html">Exercises</a> &raquo;</li>
       <li>Mechatronics: solving of systems of ODEs II</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/E10.rst.txt" rel="nofollow"> View page source</a>
@@ -74,25 +87,110 @@
 <ul class="simple">
 <li><dl class="simple">
 <dt>given:</dt><dd><ul>
-<li><p><span class="math notranslate nohighlight">\(F, a, q_0, \alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> - time</p></li>
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> - position of the movable side of the capacitor</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q(t)\)</span> - electrical charge</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_0\)</span> - initial electrical charge</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> - resistor</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> - coil (inductor)</p></li>
+<li><p><span class="math notranslate nohighlight">\(I\)</span> - current</p></li>
+<li><p><span class="math notranslate nohighlight">\(C(x(t))\)</span> - capacitance</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_0(t)\)</span> - gravitational acceleration</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> - point mass at the end of the pendulum</p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> - spring stiffness</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> - damping factor</p></li>
+<li><p><span class="math notranslate nohighlight">\(^{\cdot}\)</span> - derivative with respect to time</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt>wanted:</dt><dd><ul>
-<li><p>…</p></li>
+<li><p>Equation of motion using Lagrange equation of second kind</p></li>
+<li><p>Optional: plot of the displacement of the movable side of the capacitor</p></li>
 </ul>
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt>procedure:</dt><dd><ul>
+<li><p>define symbols and functions</p></li>
+<li><p>get kinetic energy</p></li>
+<li><p>get potential energy</p></li>
+<li><p>get dissipation function</p></li>
+<li><p>get applied forces</p></li>
+<li><p>define Lagrangian</p></li>
+<li><dl class="simple">
+<dt>apply formalism to get Euler-Lagrange equation / equation of motion</dt><dd><ul>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}(t)}\right) - \frac{\partial L}{\partial q(t)} = -\frac{\partial d}{\partial \dot{q}(t)} + F \frac{\partial r_f}{\partial q(t)}\)</span></p></li>
 </ul>
+</dd>
+</dl>
+</li>
+<li><p>Optional: solve the equation of motion using <strong>scipy.odeint()</strong> considering ICS and <span class="math notranslate nohighlight">\(t \in {0..20}\)</span> s</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><strong>pseudo-code</strong>:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do this task inside a jupyter notebook!</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">variables</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">...</span>
+
+<span class="c1"># define symbols</span>
+<span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># define the components of the Lagrangian</span>
+<span class="n">T</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># kinetic energy</span>
+<span class="n">U</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># potential energy</span>
+<span class="n">d</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># dissipation function</span>
+<span class="n">F</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># general forces</span>
+
+<span class="c1"># calculate the Lagrangian</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">T</span><span class="o">-</span><span class="n">U</span>
+
+<span class="c1"># apply the formalism</span>
+<span class="n">EoMo1</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="n">EoMo2</span> <span class="o">=</span> <span class="o">...</span>
+
+<span class="c1"># substitute values (optional)</span>
+<span class="n">EoMo1</span> <span class="o">=</span> <span class="n">EoMo1</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">),(</span><span class="o">..</span><span class="p">,</span><span class="o">..</span><span class="p">)</span><span class="o">...</span><span class="p">])</span>
+<span class="o">...</span>
+
+<span class="c1"># define lambda function (optional)</span>
+<span class="n">fun1</span> <span class="o">=</span>  <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">fun2</span> <span class="o">=</span>  <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Setup system of ordinary differential equations of first order</span>
+<span class="c1"># in order to solve the ordinary differential equations of second order (optional)</span>
+
+<span class="k">def</span> <span class="nf">ode_sys</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">return</span>
+
+<span class="c1"># Solve the IVP (optional)</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">odesys</span><span class="p">,</span> <span class="n">iniVal</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># plot results</span>
+<span class="o">....</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="E9.html" class="btn btn-neutral float-left" title="Dynamics: solving of systems of ODEs I" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

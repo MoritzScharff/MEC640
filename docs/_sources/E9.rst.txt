@@ -103,3 +103,5 @@ Dynamics: solving of systems of ODEs I
         time.sleep(0.00000001)
         plt.close()
 
+.. raw:: html
+    :file: E9.html
