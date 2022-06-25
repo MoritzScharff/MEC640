@@ -3,7 +3,7 @@ Mechatronics: solving of systems of ODEs II
 
 .. image:: _static/E10.png
     :width: 400
-    :alt: Bar with joint and different loads.
+    :alt: Capacitive displacement sensor.
 
 - given:
     - :math:`t` - time
@@ -14,7 +14,7 @@ Mechatronics: solving of systems of ODEs II
     - :math:`L` - coil (inductor)
     - :math:`I` - current
     - :math:`C(x(t))` - capacitance
-    - :math:`E_0(t)` - gravitational acceleration
+    - :math:`E_0(t)` - supply voltage
     - :math:`m` - point mass at the end of the pendulum
     - :math:`c` - spring stiffness
     - :math:`k` - damping factor
