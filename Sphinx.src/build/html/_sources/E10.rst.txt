@@ -86,3 +86,6 @@ Mechatronics: solving of systems of ODEs II
 
     # plot results
     ....
+
+.. raw:: html
+    :file: E10.html
