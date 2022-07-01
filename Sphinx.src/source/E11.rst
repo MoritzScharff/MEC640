@@ -3,7 +3,9 @@ Dynamics: solving of systems of ODEs III
 
 .. image:: _static/E11n.png
     :width: 400
-    :alt: Connected mass points inspired by `SciPy CookBook<https://scipy-cookbook.readthedocs.io/items/CoupledSpringMassSystem.html>`_.
+    :alt: Connected mass points inspired by `SciPy CookBook <https://scipy-cookbook.readthedocs.io/items/CoupledSpringMassSystem.html>`_ .
+
+Connected mass points inspired by `SciPy CookBook <https://scipy-cookbook.readthedocs.io/items/CoupledSpringMassSystem.html>`_ .
 
 - given:
     - :math:`t\in [0..10]s` - time
