@@ -87,3 +87,6 @@ Connected mass points inspired by `SciPy CookBook <https://scipy-cookbook.readth
 
     # plot results
     ....
+
+.. raw:: html
+    :file: E11.html
